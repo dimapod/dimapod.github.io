@@ -19,22 +19,19 @@
     <![endif]-->
   </head>
   <body>
+    <section id="header">
+    </section>
     <section id="content">
-      <h1><a href="http://xebia-france.github.io/selma"><img src="img/logo-v6-medium.png" alt="S3lm4 logo"/></a></h1>
-      <p id="tag"><em>S</em>tupid <em>S</em>imple <em>S</em>tatically <em>L</em>inked <em>Ma</em>pper</p>
-<p>Selma generates static code to map properties from one bean to another. We <em>K</em>eep <em>I</em>t <em>S</em>tupid <em>S</em>imple: convention over configuration, light footprint, easy ot use, easy to learn, are Selma's roots.
-    On one side, Selma is an <em>Annotation Processor</em> that generate Java code to handle the mapping from field to field at <em>compile time</em>.
-    On the over side, it is an API to instantiate and invoke the generated Mapper implementation.</p>
+    <h1><a href="http://xebia-france.github.io/selma"><img src="img/logo-v6-medium.png" alt="S3lm4 logo"/></a></h1>
+    <p id="tag"><em>S</em>tupid <em>S</em>imple <em>S</em>tatically <em>L</em>inked <em>Ma</em>pper</p>
+    <p>Selma generates static code to map properties from one bean to another. We <em>K</em>eep <em>I</em>t <em>S</em>tupid <em>S</em>imple: convention over configuration, light footprint, easy ot use, easy to learn, are Selma's roots. On one side, Selma is an <em>Annotation Processor</em> that generate Java code to handle the mapping from field to field at <em>compile time</em>. On the over side, it is an API to instantiate and invoke the generated Mapper implementation.</p>
 
-<h2 id="why">Why another mapping framework ?</h2>
+    <h2 id="why">Why another mapping framework ?</h2>
 
-<p>Existings frameworks massively use reflection API to build dynamicaly the mapper. Well let me see, it's fine !
-    In fact, it can be, but the better mapping framework I know is vanilla Java code with it's long list of if conditions. Because performance are far better, and I have total control on the mapping. More over, the static code is refactoring proof, and easy to debug.
-    But that is painfull :p. Writing all this code is always my preferred part, almost always since there is sometime more than 3 poor little beans. That's where Selma comes, the idea is simple get advantages of the manual mapping without the pain.</p>
+    <p>Existings frameworks massively use reflection API to build dynamicaly the mapper. Well let me see, it's fine ! In fact, it can be, but the better mapping framework I know is vanilla Java code with it's long list of if conditions. Because performance are far better, and I have total control on the mapping. More over, the static code is refactoring proof, and easy to debug. But that is painfull :p. Writing all this code is always my preferred part, almost always since there is sometime more than 3 poor little beans. That's where Selma comes, the idea is simple get advantages of the manual mapping without the pain.</p>
 
-
-<h2 id="tuto_1_min">The 1 minute tutorial</h2>
-<p class="bullet-point">First add Selma to your <em>pom</em></p>
+    <h2 id="tuto_1_min">The 1 minute tutorial</h2>
+    <p class="bullet-point">First add Selma to your <em>pom</em></p>
 
 <pre><code>&lt;!-- scope provided because the processor is only needed for the compiler --&gt;
     &lt;dependency&gt;
@@ -52,22 +49,22 @@
     &lt;/dependency&gt;
 </code></pre>
 
+    <p><i>There are 2 artifacts</i></p>
+    <ul>
+      <li><em>selma-processor</em> - contains the annotation processor and the code generation part. It should be in a provided scope because we need it only at compilation time.</li>
+      <li><em>selma</em> - contains the API to work with the generated mappers. We use the default scope because we need the API at runtime.</li>
+    </ul>
 
-<p><i>There are 2 artifacts</i></p>
-<ul>
-  <li><em>selma-processor</em> - contains the annotation processor and the code generation part. It should be in a provided scope because we need it only at compilation time.</li>
-  <li><em>selma</em> - contains the API to work with the generated mappers. We use the default scope because we need the API at runtime.</li>
-</ul>
+    <p class="bullet-point">Then declare your mapper</p>
 
-<p class="bullet-point">Then declare your mapper</p>
 <pre><code>@Mapper
 public interface SelmaMapper {
     OutBean asOutBean(InBean in);
 }
 </code></pre>
 
-<p><i>Here we've defined SelmaMapper which maps InBean to an instance of OutBean.</i></p>
-<p class="bullet-point">Finally, use the mapper</p>
+    <p><i>Here we've defined SelmaMapper which maps InBean to an instance of OutBean.</i></p>
+    <p class="bullet-point">Finally, use the mapper</p>
 
 <pre><code>// Get SelmaMapper
 SelmaMapper mapper = Selma.getMapper(SelmaMapper.class);
@@ -76,9 +73,9 @@ SelmaMapper mapper = Selma.getMapper(SelmaMapper.class);
 OutBean res = mapper.asOutBean(in);
 </code></pre>
 
-<p class="bullet-point">Build and enjoy!</p>
-<p>Any issue will be reported in the compiler log, it will also give you fix tips.</p>
-<p><a href="https://github.com/xebia-france/selma/tree/master/examples">Check our sample app project in github.</a></p>
+    <p class="bullet-point">Build and enjoy!</p>
+    <p>Any issue will be reported in the compiler log, it will also give you fix tips.</p>
+    <p><a href="https://github.com/xebia-france/selma/tree/master/examples">Check our sample app project in github.</a></p>
 
 
 
