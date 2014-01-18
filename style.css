@@ -4,8 +4,18 @@ html {
 
 body {
   color: #2c2c2c;
-  border-top: 2px solid #ddd;
-  background: #efefef url('../img/body.jpg') repeat top left;
+  /*border-top: 2px solid #ddd;*/
+}
+
+#header {
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 50px;
+    background: #24221f;
+    opacity: .96;
+    position: fixed;
+    text-transform: uppercase;
 }
 
 #header .itm {
@@ -13,9 +23,33 @@ body {
     margin: 10px 110px 0 0;
 }
 
+#header .left {
+    margin-top: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.wrapper {
+    margin-left: 100px;
+    margin: 0 auto;
+}
+
 #content {
   padding: 100px 110px 60px 110px;
+  background: #efefef url('../img/body.jpg') repeat top left;
 }
+
+#documentation {
+  padding: 50px 110px 60px 110px;
+}
+
+#documentation h1 + p {
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
 
 h1>img:hover {
   background-color: #a07a5c;
@@ -23,6 +57,10 @@ h1>img:hover {
 
 em {
     font-style: normal;
+    color: #c90a0a;
+}
+
+.disclaimer {
     color: #c90a0a;
 }
 
@@ -40,10 +78,10 @@ h1 a:hover {
 }
 
 h2 {
-  margin-top: 70px;
+  margin-top: 50px;
   font-weight: 100;
   letter-spacing: 1px;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid #bfbfbf;
 }
 
 #tag {
@@ -119,14 +157,22 @@ code {
 }
 
 pre {
-  margin: 30px;
-  padding: 30px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  overflow-x: auto;
-  background: whitesmoke;
+    margin: 30px;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-bottom-color: #ddd;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 10px #eee;
+    -moz-box-shadow: inset 0 0 10px #eee;
+    box-shadow: inset 0 0 10px #eee;
+    overflow-x: auto;
+}
+
+#content pre {
+    background: whitesmoke;
 }
 
 img.bordered {
