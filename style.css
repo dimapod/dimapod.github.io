@@ -16,6 +16,8 @@ body {
     opacity: .96;
     position: fixed;
     text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 #header .itm {
@@ -23,16 +25,59 @@ body {
     margin: 10px 110px 0 0;
 }
 
-#header .left {
-    margin-top: 14px;
+#header .wrapper {
+    margin: 0 auto;
+    padding: 0 110px;
+}
+
+#header .left, #header .right {
+    margin-top: 11px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 18px;
 }
 
-.wrapper {
-    margin-left: 100px;
-    margin: 0 auto;
+#header .travis {
+    padding-top: 14px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+#header .left a, #header .left a:visited, #header .right a, #header .right a:visited {
+    color: white;
+}
+
+#header ul {
+    margin-left: 30px;
+    float: left;
+    margin-top: 0;
+}
+
+#header li {
+    font-weight: normal;
+    display: inline-block;
+    padding: 16px 10px 14px;
+    cursor: pointer;
+    margin: 0;
+    clear: none;
+    -webkit-transition: all 0.3s;
+    font-size: 13px;
+}
+
+li {
+    line-height: 20px;
+    text-align: -webkit-match-parent;
+}
+
+#header li a {
+    color: #9e9589;
+    background: none;
 }
 
 #content {
@@ -124,7 +169,7 @@ a:hover {
   text-decoration: underline;
 }
 
-ul {
+#content ul, #documentation ul {
   margin-top: 20px;
   padding: 0 15px;
   width: 100%;
@@ -136,7 +181,7 @@ ul {
   box-sizing: content-box;
 }
 
-ul li {
+#content ul li, #documentation ul li {
   margin-top: 5px;
   margin-right: 60px;
   list-style: none;
@@ -144,7 +189,7 @@ ul li {
   font-size: 12px;
 }
 
-ul::after {
+#content ul::after, #documentation ul::after {
   content: '.';
   height: 0;
   display: block;
@@ -209,9 +254,9 @@ code .string { color: #5890ad }
 code .keyword { color: #8a6343 }
 code .number { color: #2f6fad }
 
-@media all and (max-width: 850px) {
+/*@media all and (max-width: 850px) {
   ul li {
     width: 100%;
   }
-}
+}*/
 
