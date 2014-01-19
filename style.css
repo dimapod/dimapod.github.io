@@ -41,6 +41,10 @@ body {
     padding-top: 4px;
 }
 
+#header a, #header a:hover, #header a:visited {
+    text-decoration: none;
+}
+
 .left {
     float: left;
 }
@@ -68,6 +72,10 @@ body {
     clear: none;
     -webkit-transition: all 0.3s;
     font-size: 13px;
+}
+
+#header li:hover {
+    background: whitesmoke;
 }
 
 li {
