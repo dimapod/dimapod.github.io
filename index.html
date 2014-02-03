@@ -244,8 +244,9 @@ public final class PersonMapperSelmaGeneratedClass
       // Show or hide fixed menu
       var menuFixed = false,
       $menuFixed = $("#header");
+      var i=0;
       $(window).scroll(function () {
-          if ($("body").scrollTop() > 149) {
+          if ($(window).scrollTop() > 149) {
               if (menuFixed === false) {
                   $menuFixed.slideDown("0.2");
                   menuFixed = true;
